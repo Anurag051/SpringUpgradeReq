@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ans1" class="com.anurag.beans.Answer">
+		<property name="id" value="1001" />
+		<property name="answer" value="java is Programing language" />
+		<property name="postedDate" value="02/15/2016" />
+	</bean>
+	<bean id="ans2" class="com.anurag.beans.Answer">
+		<property name="id" value="1002" />
+		<property name="answer" value="java is Platform Independed" />
+		<property name="postedDate" value="02/17/2016" />
+	</bean>
+	<bean id="ans3" class="com.anurag.beans.Answer">
+		<property name="id" value="1003" />
+		<property name="answer" value="java is Object Orianted Programing" />
+		<property name="postedDate" value="02/20/2016" />
+	</bean>
+	<bean id="user1" class="com.anurag.beans.User">
+		<property name="id" value="209" />
+		<property name="name" value="ANURAG" />
+		<property name="email" value="anurag@gmail.com" />
+	</bean>
+	<bean id="user2" class="com.anurag.beans.User">
+		<property name="id" value="206" />
+		<property name="name" value="BIKY" />
+		<property name="email" value="biky@live.com" />
+	</bean>
+	<bean id="question" class="com.anurag.beans.Question">
+		<property name="id" value="50" />
+		<property name="name" value="What is Java ?? " />
+		<property name="answers">
+			<map>
+				<entry key-ref="ans1" value-ref="user1" />
+				<entry key-ref="ans2" value-ref="user1" />
+				<entry key-ref="ans3" value-ref="user2" />
+			</map>
+		</property>
+	</bean>
+</beans>

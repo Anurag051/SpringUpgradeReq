@@ -1,0 +1,33 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<beans>
+<bean id="cashier" class="com.anurag.beans.Cashier">
+<property name="filepath" value="D:/Programing/SPRING"/>
+<property name="filename" value="Product"/>
+</bean>
+<bean id="Product1" class="com.anurag.beans.Products">
+		<property name="pid" value='4001' />
+		<property name="pname" value="KeyBoard" />
+		<property name="pprice" value="800" />
+	</bean>
+	<bean id="Product2" class="com.anurag.beans.Products">
+		<property name="pid" value='4002' />
+		<property name="pname" value="Mouse" />
+		<property name="pprice" value="500" />
+	</bean>
+	<bean id="Product3" class="com.anurag.beans.Products">
+		<property name="pid" value='4003' />
+		<property name="pname" value="Monitor" />
+		<property name="pprice" value="3000" />
+	</bean>
+	<bean id="shopingCart" class="com.anurag.beans.ShopingCart">
+		<property name="list">
+			<list>
+				<ref bean="Product1" />
+				<ref bean="Product2" />
+				<ref bean="Product3" />
+			</list>
+		</property>
+	</bean>
+</beans>

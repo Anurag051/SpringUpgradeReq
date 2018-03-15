@@ -1,0 +1,9 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<bean id="bean5" class="com.anurag.beans.BeanClass5">
+<property name="parth5" value="A"/></bean>
+<bean id="bean6" class="com.anurag.beans.BeanClass6">
+<property name="parth6" value="G"/></bean>
+</beans>

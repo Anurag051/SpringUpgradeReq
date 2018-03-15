@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<import resource="classpath:/com/anurag/config/Bean4.xml"/>
+<bean id="bean3" class="com.anurag.beans.BeanClass3">
+<property name="parth3" value="U"/>
+<property name="class4" ref="bean4"/>
+<property name="class5" ref="bean5"/>
+<property name="class6" ref="bean6"/>
+</bean>
+<bean id="bean4" class="com.anurag.beans.BeanClass4">
+<property name="parth4" value="R"/></bean>
+</beans>

@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<bean id="cls" class="java.lang.Class" factory-method="forName" >
+<constructor-arg value="oracle.jdbc.driver.OracleDriver"/>
+</bean>
+<bean id="con" class="java.sql.DriverManager" factory-method="getConnection">
+<constructor-arg value="jdbc:oracle:thin:@localhost:1521:XE" index="0"/>
+<constructor-arg value="ANURAG" index="1"/>
+<constructor-arg  value="DELL" index="2"/>
+</bean>
+<bean id="st" factory-bean="con" factory-method="createStatement"/>
+<bean id='rset' factory-bean="st" factory-method="executeQuery">
+<constructor-arg value="SELECT * FROM EMPLOYEE"/>
+</bean>
+<bean id="rsmd" factory-bean="rset" factory-method="getMetaData"/>
+</beans>

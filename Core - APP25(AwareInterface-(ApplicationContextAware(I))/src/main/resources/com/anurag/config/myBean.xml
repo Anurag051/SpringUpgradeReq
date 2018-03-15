@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<bean id="std1" class="com.anurag.beans.Student">
+<property name="studentID" value="101"/>
+<property name="studentName" value="Anurag"/>
+</bean>
+<bean id="std2" class="com.anurag.beans.Student">
+<property name="studentID" value="102"/>
+<property name="studentName" value="Biky"/>
+</bean>
+<bean id="std3" class="com.anurag.beans.Student">
+<property name="studentID" value="103"/>
+<property name="studentName" value="Bhanu"/>
+</bean>
+<bean id="collage" class="com.anurag.beans.Collage">
+<property name="collageName" value="IBS"/>
+<property name="students">
+<list>
+<ref bean="std1"/>
+<ref bean="std2"/>
+<ref bean="std3"/>
+</list>
+</property>
+</bean>
+<bean id="myAwareService" class="com.anurag.beans.MyAwareService"/>
+</beans>

@@ -1,0 +1,10 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+  <class name="com.anurag.pojo.Account" table="ACCOUNT">
+  <id name="accountID" column="ID"/>
+  <property name="name" column="NAME"/>
+  <property name="balance" column="BALANCE"/>
+  </class>
+  </hibernate-mapping>

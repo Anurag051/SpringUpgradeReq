@@ -1,0 +1,11 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+  <class name="com.anurag.pojo.Book" table="BOOK">
+  <id name="isbn" column="ISBN"/>
+  <property name="bookName" column="BOOK_NAME"/>
+  <property name="bookID" column="BOOK_ID"/>
+  <property name="price" column="PRICE"/>
+  </class>
+  </hibernate-mapping>

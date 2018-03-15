@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="question" class="com.anurag.beans.Question">
+		<constructor-arg value='11' />
+		<constructor-arg value="What is Java ? "/>
+		<constructor-arg>
+			<map>
+				<entry key="Java is a programing Language " value="Anurag" />
+				<entry key="Java is a platform Independed Programing Language "
+					value="Biky" />
+				<entry key="Java is Programing Language Ocean " value="Umesh" />
+				<entry key="Java is a simple Programing Language " value="Anurag" />
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>

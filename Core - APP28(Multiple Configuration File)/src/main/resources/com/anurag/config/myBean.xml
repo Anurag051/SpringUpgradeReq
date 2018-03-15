@@ -1,0 +1,12 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<bean id="waterBean" class="com.anurag.beans.WaterBean">
+<property name="fishBean">
+<bean class="com.anurag.beans.FishBean">
+<property name="fishName" value="GoldFish"/>
+</bean>
+</property>
+</bean>
+</beans>

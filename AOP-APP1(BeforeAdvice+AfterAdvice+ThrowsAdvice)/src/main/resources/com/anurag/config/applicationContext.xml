@@ -1,0 +1,34 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<context:annotation-config></context:annotation-config>
+<bean id="loggingBeforeAdvice" class="com.anurag.advices.LoggingBeforeAdvice"/>
+<bean id="loggingAfterAdvice" class="com.anurag.advices.LoggingAfterAdvice"/>
+<bean id="throwsAdvice" class="com.anurag.advices.LoggingThrowsAdvice"/>
+<bean id="customerService" class="com.anurag.service.CustomerServiceImpl">
+<!-- <property name="name" value="ANURAG"/> -->
+<!-- <property name="url" value="www.anurag.com"/> -->
+</bean>
+<bean id="customerServiceBeforeProxy" 
+								class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="proxyInterfaces" value="com.anurag.service.CustomerService"/>
+<property name="interceptorNames" value="loggingBeforeAdvice"/>
+<property name="target" ref="customerService"/>
+</bean>
+<bean id="customerServiceAfterProxy" 
+								class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="proxyInterfaces" value="com.anurag.service.CustomerService"/>
+<property name="interceptorNames" value="loggingAfterAdvice"/>
+<property name="target" ref="customerService"/>
+</bean>
+<bean id="customerServiceThrowsProxy" 
+								class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="proxyInterfaces" value="com.anurag.service.CustomerService"/>
+<property name="interceptorNames" value="throwsAdvice"/>
+<property name="targetName" value="customerService"/>
+</bean>
+</beans>

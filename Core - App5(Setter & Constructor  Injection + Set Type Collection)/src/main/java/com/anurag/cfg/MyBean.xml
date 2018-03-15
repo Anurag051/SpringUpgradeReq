@@ -1,0 +1,29 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+		<beans>
+		<bean id="std1" class="com.anurag.beans.Student">
+		<property name="sid" value="100"/>
+		<property name="sname" value="ANURAG"/>
+		<property name="saddr" value="HYD"/>
+		</bean>
+		<bean id="std2" class="com.anurag.beans.Student">
+		<property name="sid" value="101"/>
+		<property name="sname" value="AJAY"/>
+		<property name="saddr" value="MUM"/>
+		</bean>
+		<bean id="std3" class="com.anurag.beans.Student">
+		<property name="sid" value="102"/>
+		<property name="sname" value="AKSAY"/>
+		<property name="saddr" value="BNG"/>
+		</bean>
+		<bean id="collage" class="com.anurag.beans.Collage">
+		<constructor-arg value="IBS" index="0"/>
+		<constructor-arg index="1">
+		<set>
+		<ref bean="std1"/>
+		<ref bean="std2"/>
+		<ref bean="std3"/>
+		</set>
+		</constructor-arg>
+		</bean>
+		</beans>

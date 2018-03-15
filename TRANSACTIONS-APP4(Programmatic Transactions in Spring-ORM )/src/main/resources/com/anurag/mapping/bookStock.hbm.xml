@@ -1,0 +1,12 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.anurag.pojo.BookStock" table="BOOK_STOCK">
+		<id name="id" column="BOOK_STOCK_ID" />
+		<property name="stock" column="STOCK" />
+		<property name="isbn" column="ISBN"/>
+<!-- 		<many-to-one name="book" class="com.anurag.pojo.Book" -->
+<!-- 			column="ISBN" cascade="all" /> -->
+	</class>
+</hibernate-mapping>

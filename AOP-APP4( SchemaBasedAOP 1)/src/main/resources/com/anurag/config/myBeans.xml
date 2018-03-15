@@ -1,0 +1,30 @@
+<beans  xmlns="http://www.springframework.org/schema/beans" 
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+<bean id='customerService'
+class="com.anurag.service.CustomerServiceImpl">
+<property name="name" value="ANURAG"/>
+<property name="url" value="http://www.google.com"/>
+</bean>
+<bean id="myAdvices"
+ class="com.anurag.advices.MyAdvices"/>
+<aop:config>
+<aop:pointcut id="myPointcut" 
+expression="within(com.anurag.service.CustomerServiceImpl)"/>
+<aop:aspect ref="myAdvices">
+<aop:before method="before" pointcut-ref="myPointcut"/>
+</aop:aspect>
+<aop:aspect ref="myAdvices">
+<aop:after-returning method="afterReturning"
+ pointcut-ref="myPointcut" returning="returnValue"/>
+</aop:aspect>
+<aop:aspect ref="myAdvices">
+<aop:after-throwing method="myAfterThrowing"
+ pointcut-ref="myPointcut" throwing="throwable" />
+</aop:aspect>
+</aop:config>
+</beans>

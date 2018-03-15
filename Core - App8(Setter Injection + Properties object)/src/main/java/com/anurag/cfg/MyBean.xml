@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<bean id="dbprop" class="com.anurag.beans.DataBaseProperties">
+<property name="dbproperty">
+<props>
+<prop key="oracle.driverClass">oracle.jdbc.driver.OracleDriver</prop>
+<prop key="oracle.url">jdbc:oracle:thin:@localhost:1521:XE</prop>
+<prop key="oracle.username">ANURAG</prop>
+<prop key="oracle.password">DELL</prop>
+<!-- <prop key="oracle.driverClass" value ="oracle.jdbc.driver.OracleDriver"/> -->
+<!-- <prop key="oracle.url" value="jdbc:oracle:thin:@localhost:1521:XE"/> -->
+<!-- <prop key="oracle.username" value="ANURAG"/> -->
+<!-- <prop key="oracle.password" value="DELL"/> -->
+</props>
+</property>
+</bean>
+</beans>

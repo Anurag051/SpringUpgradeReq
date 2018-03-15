@@ -1,0 +1,26 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<beans>
+<bean id="personParent" class="com.anurag.beans.Person">
+<property name="city" value="HYD"/>
+<property name="state" value="TS"/>
+<property name="country" value="INDIA"/>
+</bean>
+<bean id="personChild1" parent="personParent">
+<property name="name" value="ANURAG"/>
+<property name="phone" value="125985520"/>
+<property name="email" value="ds@j.com"/>
+</bean>
+<bean id="personChild2" parent="personParent">
+<property name="name" value="biky"/>
+<property name="phone" value="564644946"/>
+<property name="email" value="desg@hjg.com"/>
+</bean>
+<bean id="personChild3" parent="personParent">
+<property name="name" value="biky"/>
+<property name="phone" value="564644946"/>
+<property name="email" value="desg@hjg.com"/>
+<property name="city" value="vizag"/>
+</bean>
+</beans>

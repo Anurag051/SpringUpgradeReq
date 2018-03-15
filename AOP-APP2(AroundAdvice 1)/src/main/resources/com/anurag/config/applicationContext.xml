@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<context:annotation-config/>
+<bean id="loggingAroundAdvice" class="com.anurag.advices.LoggingAroundAdvice"/>
+<bean id="customerService" class="com.anurag.service.CustomerServiceImpl">
+<!-- <property name="name" value="ANURAG"/> -->
+<!-- <property name="url" value="www.anurag.com"/> -->
+</bean>
+<bean id="customerServiceProxy"
+class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="targetName" value="customerService"/>
+<property name="proxyInterfaces">
+<list> <value>com.anurag.service.CustomerService</value> </list>
+</property>
+<property name="interceptorNames">
+<list> <value>loggingAroundAdvice</value> </list>
+</property>
+</bean>
+</beans>

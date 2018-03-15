@@ -1,0 +1,12 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+  <class name="com.anurag.pojo.User" table="USER_DETAILS">
+  <id name="userID" column="UID"/>
+  <property name="name" column="UNAME"/>
+  <property name="mobile" column="MOBILE"/>
+  <property name="email" column="EMAIL"/>
+  <property name="age" column="AGE"/>
+  </class>
+  </hibernate-mapping>
